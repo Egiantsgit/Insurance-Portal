@@ -1,0 +1,146 @@
+<style>
+    .search {
+        width: 400px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #rj {
+        background-color: #FFFACD;
+    }
+
+    .search-form .form-group {
+        float: right !important;
+        transition: all 0.35s, border-radius 0s;
+        width: 32px;
+        height: 32px;
+        background-color: #fff;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        border-radius: 25px;
+        border: 1px solid #ccc;
+    }
+
+    .search-form .form-group input.form-control {
+        padding-right: 20px;
+        border: 0 none;
+        background: transparent;
+        box-shadow: none;
+        display: block;
+    }
+
+    .search-form .form-group input.form-control::-webkit-input-placeholder {
+        display: none;
+    }
+
+    .search-form .form-group input.form-control:-moz-placeholder {
+
+        display: none;
+    }
+
+    .search-form .form-group input.form-control::-moz-placeholder {
+
+        display: none;
+    }
+
+    .search-form .form-group input.form-control:-ms-input-placeholder {
+        display: none;
+    }
+
+    .search-form .form-group:hover,
+    .search-form .form-group.hover {
+        width: 100%;
+        border-radius: 4px 25px 25px 4px;
+    }
+
+    .search-form .form-group span.form-control-feedback {
+        position: absolute;
+        top: -1px;
+        right: -2px;
+        z-index: 2;
+        display: block;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        color: #3596e0;
+        left: initial;
+        font-size: 14px;
+    }
+</style>
+
+<div class="container">
+
+    <img src="https://www.nevadainsuranceenrollment.com/wp-content/uploads/2017/04/Mom-and-Son-MOBILE-homepage-image_In.jpg"
+        class="img-fluid" alt="Responsive image" width="1050px" height="400px">
+
+    <br><br>
+
+    <div>
+        <div class="col-md-4 col-md-offset-3">
+
+            <form action="" class="search-form" name="form" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+                <div class="form-group has-feedback">
+
+                    <input type="tel" class="form-control" name="search" id="search" placeholder="Type to search by zipcode" maxlength="5" ngModel
+                        #search="ngModel">
+                </div><button type="submit" class="btn btn-primary">search</button > </form></div>
+        
+       
+                </div>
+                <marquee WIDTH=1000 scrollamount=10 BEHAVIOR=ALTERNATE BGCOLOR=#F5F5DC>We are here to serve you..!</marquee>
+</div><br>
+            
+
+<div class="row" >
+    <div class="container">
+   <div class="col-sm-12">
+     <div class="col-sm-6" *ngIf="!zipcodeavialable">
+         <div id="div" *ngFor="let provider of doctorDetails" >
+            <div class="well" (mouseenter)="getData(provider)" (mouseleave)="removeData()" id="raj">
+
+                <img align="left" src="{{provider.image}}" width="135px" height="135px">
+                <div class="column column-80">
+                    <h3 class="text-center">{{provider.doctorname}}</h3>
+                    <hr class="style">
+                    <h4 class="text-center">Specialization: {{provider.doctorqualification}}<br>
+                    <br>{{provider.doctornumber}}</h4>
+                </div>
+            </div>
+    
+           
+        </div>
+     </div>
+
+          <div class="col-sm-6" *ngIf="zipcodeavialable">
+         <div id="div" *ngFor="let provider of newdoctorDetails" >
+            <div class="well" (mouseenter)="getData(provider)" (mouseleave)="removeData()" id="raj">
+
+                <img align="left" src="{{provider.image}}" width="135px" height="135px">
+                <div class="column column-80">
+                    <h3 class="text-center">{{provider.doctorname}}</h3>
+                    <hr class="style">
+                    <h4 class="text-center">Specialization: {{provider.doctorqualification}}<br>
+                    <br>{{provider.doctornumber}}</h4>
+                </div>
+            </div>
+    
+           
+        </div>
+     </div>
+        
+        <div class="col-sm-6">
+            <div class="well" *ngIf="isopen" id="rj"> 
+
+                <!--<img align="left" src="{{oneProvider.image}}" width="135px" height="135px">-->
+                <div class="column column-80">
+                    <h4 class="text-center"><u>Address: </u>{{oneProvider.doctoraddress}}<br>
+                    <br><u>Working days: </u> {{oneProvider.workingdays}}<br>
+                    <br><u>Timings: </u>{{oneProvider.doctortimings}}<br>
+                    <br><u>Review:</u> {{oneProvider.review}}<br>
+                    <br><u>Provider type:</u> {{oneProvider.providertype}}</h4>
+                </div>
+            </div>
+        </div>
+         </div>
+    </div>
+</div>

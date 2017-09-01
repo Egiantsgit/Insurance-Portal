@@ -1,0 +1,84 @@
+<nav class = "navbar" style="background-color: #0019A9;" role = "navigation">
+   
+   
+      <a class = "navbar-brand" style="color: white;" routerLink="/">Customer Insurance</a>
+   
+   
+  
+   
+      <ul class = "nav navbar-nav bg-inverse">
+         <li class = "active"><a routerLink="/login" routerLinkActive="active" style="color: white;" >Patient Login</a></li>
+			 </ul>
+
+       <ul class = "nav navbar-nav bg-inverse">
+         <li class = "active"><a routerLink="/register" routerLinkActive="active" style="color: white;" >SignUp</a></li>
+			 </ul>
+        <ul class = "nav navbar-nav bg-inverse">
+         <li class = "active"><a routerLink="/home" routerLinkActive="active" style="color: white;" >Home</a></li>
+			 </ul>
+   
+       <ul class = "nav navbar-nav">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" style="color: white;" (click)="getPersonDetails()">Your Details <span class="caret"></span></a>
+        <ul class="dropdown-menu" *ngIf="patientInfo">
+          <li> FirstName:      {{patientInfo?.firstname}}</li>
+          <li> LastName:       {{patientInfo?.lastname}}</li>
+          <li> Age:            {{patientInfo?.age}}</li>
+          <li> DOB:            {{patientInfo?.dob}}</li>
+          <li> Gender:         {{patientInfo?.gender}}</li>
+          <li> Mobile:         {{patientInfo?.mobile}}</li>
+          <li> Address:        {{patientInfo?.address}}</li>
+          <li> CountryOfOrigin:{{patientInfo?.countryOfOrigin}}</li>
+          <li> Height:         {{patientInfo?.height}}</li>
+          <li> Weight:         {{patientInfo?.weight}}</li>
+
+        </ul>
+      </li></ul>
+
+
+
+      <ul class = "nav navbar-nav">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" style="color: white;" (click)="getInsuranceDetails()">Your Personal History <span class="caret"></span></a>
+        <ul class="dropdown-menu" *ngIf="patientInfo">
+          <li> Smoking:         {{patientInfo?.smoking}}</li>
+          <li> Alcohol:         {{patientInfo?.alcohol}}</li>
+          <li> Drug Addiction:  {{patientInfo?.drugaddict}}</li>
+          <li> Mental Illness:  {{patientInfo?.mentalillness}}</li> 
+        </ul>
+      </li></ul>
+
+      <ul class = "nav navbar-nav">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" style="color: white;" (click)="getInsuranceDetails()">Your Insurance Details <span class="caret"></span></a>
+       <ul class="dropdown-menu" *ngIf="insuranceDetails">
+          <li>Membership Type:  {{insuranceDetails?.membershipType}}</li>
+          <li>Premium:          {{insuranceDetails?.premium}}</li>
+          <li>Deductible:       {{insuranceDetails?.deductible}}</li> 
+          <li>Insurance:        {{insuranceDetails?.co_insurance}}</li>
+          <li>Copay:            {{insuranceDetails?.copay}}</li>
+          <li>Out of pocket:    {{insuranceDetails?.out_of_pocket}}</li>
+
+        </ul>
+      </li></ul>
+
+
+         <ul class = "nav navbar-nav">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" style="color: white;" (click)="getInsuranceDetails()">Your Activity <span class="caret"></span></a>
+      </ul>
+
+      <ul class = "nav navbar-nav bg-inverse">
+         <li class = "active"><a routerLink="/claims" routerLinkActive="active" style="color: white;" >Claims</a></li>
+			 </ul>
+     
+
+        
+   
+      <div class="pull-right">
+        <a class = "navbar-brand" routerLink="/" style="color: white;" routerLinkActive="active" (click)="logout()">Logout</a>
+      </div>
+      
+  
+</nav>
+
+
+
+
+	<router-outlet></router-outlet>
